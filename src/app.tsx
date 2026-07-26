@@ -9,6 +9,7 @@ import "./app.css";
 export default function App(): JSX.Element {
   return (
     <Router
+      base={import.meta.env.BASE_URL}
       root={(props) => (
         <GameProgressProvider>
           <Suspense>{props.children}</Suspense>
