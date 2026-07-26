@@ -255,8 +255,11 @@ h1 {
   z-index: 2;
   right: 0.8rem;
   bottom: 0.8rem;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.12rem;
   width: 4.2rem;
   height: 4.2rem;
   border: 3px solid #17253e;
@@ -266,12 +269,14 @@ h1 {
   font-size: 0.82rem;
   font-weight: 900;
   line-height: 1;
+  text-align: center;
   transform: rotate(7deg) translateY(0);
 }
 .repair-marker span {
   display: block;
-  max-width: 3rem;
-  margin-top: 0.1rem;
+  width: 100%;
+  max-width: 3.25rem;
+  margin: 0;
   font-size: 0.56rem;
   text-transform: uppercase;
 }

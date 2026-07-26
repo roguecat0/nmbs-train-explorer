@@ -44,7 +44,7 @@ export default function TrainTour(props: TrainTourProps): JSX.Element {
               </div>
               <span class={`repair-marker ${complete() ? "done" : ""}`} aria-hidden="true">
                 {complete() ? "✓" : "Scan"}
-                <span>{complete() ? "Repaired" : "View repair"}</span>
+                <span>{complete() ? "Repaired" : "QR code"}</span>
               </span>
             </article>
           );
