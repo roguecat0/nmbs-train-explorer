@@ -309,6 +309,14 @@ h1 {
   font-size: 1.55rem;
   letter-spacing: -0.045em;
 }
+.repair-sheet-art {
+  display: block;
+  width: 100%;
+  height: 5.5rem;
+  margin: -0.25rem 0 0.55rem;
+  object-fit: contain;
+  object-position: center;
+}
 .repair-summary {
   margin-bottom: 0.8rem;
   color: #385569;

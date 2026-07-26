@@ -1,5 +1,5 @@
 import { Show, type JSX } from "solid-js";
-import { Repair } from "~/data/repairs";
+import type { Repair } from "~/data/repairs";
 
 type RepairSheetProps = {
   repair: Repair;
@@ -21,6 +21,7 @@ export default function RepairSheet(props: RepairSheetProps): JSX.Element {
       </button>
       <p class="eyebrow">{props.completed ? "REPAIR COMPLETE" : "YOUR LATEST SCAN"}</p>
       <h2>{props.repair.title}</h2>
+      <img class="repair-sheet-art" src={props.repair.image} alt="" />
       <p class="repair-summary">
         {props.completed
           ? "This part is working again. Keep exploring to restore the rest of the train."
