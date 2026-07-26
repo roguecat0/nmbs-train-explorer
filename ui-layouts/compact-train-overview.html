@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Compact train overview</title>
+    <style>
+      :root {
+        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+        color: #16233d;
+        background: #ccefff;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-width: 320px;
+      }
+      main {
+        max-width: 460px;
+        min-height: 100vh;
+        margin: auto;
+        padding: 22px 18px 44px;
+        background: linear-gradient(#91dcf7 0 46%, #effbdc 46%);
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        gap: 12px;
+      }
+      h1 {
+        margin: 0;
+        font-size: 1.45rem;
+        letter-spacing: -0.04em;
+      }
+      header b {
+        white-space: nowrap;
+        padding: 7px 10px;
+        border-radius: 99px;
+        background: #fffbe9;
+        font-size: 0.8rem;
+      }
+      .train-card {
+        margin-top: 30px;
+        padding: 32px 14px 26px;
+        border: 4px solid #16233d;
+        border-radius: 26px;
+        background: #fffdf4;
+        box-shadow: 0 8px 0 #16233d;
+      }
+      .train {
+        display: flex;
+        align-items: end;
+        gap: 4px;
+        overflow: hidden;
+      }
+      .engine,
+      .car {
+        position: relative;
+        flex: 1;
+        height: 88px;
+        border: 4px solid #16233d;
+        background: #8dd9f6;
+      }
+      .engine {
+        min-width: 75px;
+        border-radius: 32px 10px 8px 8px;
+        background: #ffd65a;
+      }
+      .car {
+        min-width: 55px;
+        border-radius: 8px;
+      }
+      .car.done {
+        background: #80cb6b;
+      }
+      .engine:after,
+      .car:after {
+        position: absolute;
+        right: 10px;
+        bottom: -18px;
+        left: 10px;
+        height: 10px;
+        border-radius: 9px;
+        background: #344258;
+        content: "";
+      }
+      .train span {
+        position: absolute;
+        top: 16px;
+        left: 50%;
+        width: 20px;
+        height: 20px;
+        border: 3px solid #16233d;
+        border-radius: 50%;
+        background: #fffdf4;
+        transform: translateX(-50%);
+      }
+      .train .done span {
+        background: #fff0ae;
+      }
+      .caption {
+        margin: 28px 4px 0;
+        color: #526f80;
+        font-size: 0.92rem;
+      }
+      .legend {
+        display: flex;
+        gap: 14px;
+        margin-top: 18px;
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+      .legend i {
+        display: inline-block;
+        width: 13px;
+        height: 13px;
+        margin-right: 5px;
+        border: 2px solid #16233d;
+        border-radius: 50%;
+        background: #80cb6b;
+        vertical-align: -1px;
+      }
+      .legend i.wait {
+        background: #fffdf4;
+      }
+      .card {
+        margin-top: 28px;
+        padding: 19px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.75);
+      }
+      .card p {
+        margin: 0;
+        color: #526f80;
+      }
+      button {
+        width: 100%;
+        margin-top: 15px;
+        padding: 14px;
+        border: 0;
+        border-radius: 14px;
+        background: #16233d;
+        color: white;
+        font: inherit;
+        font-weight: 800;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Bring the train back to life</h1>
+        <b>3 / 8</b>
+      </header>
+      <section class="train-card" aria-label="Full train overview">
+        <div class="train">
+          <div class="engine done"><span>✓</span></div>
+          <div class="car done"><span>✓</span></div>
+          <div class="car"><span>!</span></div>
+          <div class="car"><span>!</span></div>
+          <div class="car"><span>!</span></div>
+        </div>
+        <p class="caption">
+          A complete train silhouette gives a satisfying progress view, but individual repair areas
+          become small on a phone.
+        </p>
+        <div class="legend">
+          <span><i></i> Repaired</span><span><i class="wait"></i> To discover</span>
+        </div>
+      </section>
+      <section class="card">
+        <strong>Find the next station marker</strong>
+        <p>Scan its QR code to reveal the matching repair.</p>
+        <button type="button">View tour sections</button>
+      </section>
+    </main>
+  </body>
+</html>

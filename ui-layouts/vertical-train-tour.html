@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vertical train tour</title>
+    <style>
+      :root {
+        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+        color: #16233d;
+        background: #ccefff;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-width: 320px;
+        background: linear-gradient(#8fd9f6 0 28%, #ccefff 28%);
+      }
+      main {
+        max-width: 460px;
+        min-height: 100vh;
+        margin: auto;
+        overflow: hidden;
+        background: #eefaff;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        padding: 18px 20px 16px;
+        background: rgba(238, 250, 255, 0.94);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid #c4dfeb;
+      }
+      header div {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      h1 {
+        margin: 0;
+        font-size: 1.15rem;
+        letter-spacing: -0.03em;
+      }
+      header span {
+        color: #38617a;
+        font-weight: 700;
+        font-size: 0.85rem;
+      }
+      .progress {
+        height: 9px;
+        margin-top: 12px;
+        overflow: hidden;
+        border-radius: 99px;
+        background: #c7dfe9;
+      }
+      .progress i {
+        display: block;
+        width: 38%;
+        height: 100%;
+        border-radius: inherit;
+        background: #f5a524;
+      }
+      .intro {
+        padding: 24px 24px 8px;
+        color: #38617a;
+        font-size: 0.94rem;
+      }
+      .train {
+        padding: 4px 30px 220px;
+      }
+      .car {
+        position: relative;
+        min-height: 240px;
+        margin: 18px 0;
+        padding: 26px;
+        border: 5px solid #16233d;
+        border-radius: 32px 32px 16px 16px;
+        background: #f9fbec;
+        box-shadow: 0 9px 0 #16233d;
+      }
+      .car:after {
+        position: absolute;
+        bottom: -28px;
+        left: 13%;
+        width: 74%;
+        height: 12px;
+        border-radius: 99px;
+        background: #344258;
+        content: "";
+      }
+      .car h2 {
+        margin: 0 0 7px;
+        font-size: 1.5rem;
+      }
+      .car p {
+        max-width: 210px;
+        margin: 0;
+        color: #547083;
+      }
+      .window {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 9px;
+        margin-top: 28px;
+      }
+      .window span {
+        aspect-ratio: 1;
+        border: 4px solid #16233d;
+        border-radius: 12px;
+        background: #82d8f6;
+      }
+      .window .done {
+        background: #ffd65a;
+        box-shadow: inset 0 0 0 5px #ffefac;
+      }
+      .task {
+        position: absolute;
+        right: 18px;
+        bottom: 22px;
+        width: 83px;
+        aspect-ratio: 1;
+        display: grid;
+        place-items: center;
+        border: 4px solid #16233d;
+        border-radius: 50%;
+        background: #f5a524;
+        color: #16233d;
+        font-size: 0.8rem;
+        font-weight: 900;
+        text-align: center;
+        line-height: 1.05;
+        transform: rotate(8deg);
+      }
+      .task.done {
+        background: #73c96b;
+        transform: rotate(-7deg);
+      }
+      .bottom-sheet {
+        position: fixed;
+        z-index: 4;
+        right: max(12px, calc((100vw - 436px) / 2));
+        bottom: 12px;
+        left: max(12px, calc((100vw - 436px) / 2));
+        padding: 20px;
+        border: 4px solid #16233d;
+        border-radius: 24px;
+        background: #fffdf4;
+        box-shadow: 0 7px 0 #16233d;
+      }
+      .eyebrow {
+        margin: 0 0 5px;
+        color: #be6c05;
+        font-size: 0.73rem;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+      }
+      .bottom-sheet h3 {
+        margin: 0;
+        font-size: 1.25rem;
+      }
+      button {
+        width: 100%;
+        margin-top: 14px;
+        padding: 14px;
+        border: 0;
+        border-radius: 14px;
+        background: #f5a524;
+        color: #16233d;
+        font: inherit;
+        font-weight: 900;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <h1>Train rescue tour</h1>
+          <span>3 of 8 repairs</span>
+        </div>
+        <div class="progress"><i></i></div>
+      </header>
+      <p class="intro">
+        Follow the train from cab to carriage. Scan a station marker to repair its matching part.
+      </p>
+      <section class="train" aria-label="Vertical train tour">
+        <article class="car">
+          <h2>Driver’s cab</h2>
+          <p>The controls are running again.</p>
+          <div class="window">
+            <span class="done"></span><span class="done"></span><span></span>
+          </div>
+          <span class="task done">REPAIRED</span>
+        </article>
+        <article class="car">
+          <h2>Power carriage</h2>
+          <p>One repair awaits at the wheels.</p>
+          <div class="window"><span></span><span></span><span></span></div>
+          <span class="task">NEXT<br />SCAN</span>
+        </article>
+        <article class="car">
+          <h2>Passenger carriage</h2>
+          <p>More discoveries are further down the train.</p>
+          <div class="window"><span></span><span></span><span></span></div>
+        </article>
+      </section>
+      <aside class="bottom-sheet">
+        <p class="eyebrow">YOUR LATEST SCAN</p>
+        <h3>Brake system</h3>
+        <button type="button">Repair this part</button>
+      </aside>
+    </main>
+  </body>
+</html>

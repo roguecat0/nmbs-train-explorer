@@ -1,0 +1,372 @@
+@import "tailwindcss";
+
+:root {
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  color: #17253e;
+  background: #91dcf7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background: linear-gradient(#91dcf7 0 27rem, #effbdc 27rem);
+}
+button {
+  font: inherit;
+}
+
+.game-shell {
+  width: min(100%, 34rem);
+  min-height: 100vh;
+  margin: auto;
+  padding-bottom: 2rem;
+  overflow: hidden;
+  background: #effbdc;
+}
+.progress-header {
+  padding: 1.25rem 1.25rem 1.1rem;
+  background: #ecfbff;
+  border-bottom: 1px solid #c2e4ec;
+}
+.title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.eyebrow {
+  margin: 0 0 0.3rem;
+  color: #ab6000;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+h1 {
+  max-width: 16rem;
+  margin-bottom: 0;
+  font-size: clamp(1.45rem, 6vw, 2rem);
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+.count-pill {
+  padding: 0.48rem 0.65rem;
+  border: 2px solid #17253e;
+  border-radius: 999px;
+  background: #fffdf4;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+.progress-track {
+  height: 0.6rem;
+  margin-top: 1rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #c9e5ec;
+}
+.progress-track span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: #f4a62a;
+  transition: width 0.25s ease;
+}
+.mini-train {
+  display: flex;
+  align-items: end;
+  gap: 0.2rem;
+  height: 1.9rem;
+  margin-top: 0.6rem;
+}
+.mini-train i {
+  display: block;
+  width: 1.5rem;
+  height: 1.1rem;
+  border: 2px solid #17253e;
+  border-radius: 0.28rem;
+  background: #8ed8f4;
+}
+.mini-train i.is-repaired {
+  background: #84ca73;
+}
+.mini-train i:first-child {
+  height: 1.55rem;
+  border-radius: 0.7rem 0.3rem 0.25rem 0.25rem;
+  background: #f5cf58;
+}
+.welcome-card {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  margin: 1rem 1rem 0.35rem;
+  padding: 1rem;
+  border: 3px solid #17253e;
+  border-radius: 1.1rem;
+  background: #fffdf4;
+  box-shadow: 0 0.3rem 0 #17253e;
+}
+.welcome-icon {
+  display: grid;
+  flex: 0 0 2.8rem;
+  place-items: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  background: #f6cc56;
+  font-size: 1.35rem;
+}
+.welcome-card h2 {
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+}
+.welcome-card p {
+  margin-bottom: 0;
+  color: #516c7f;
+  font-size: 0.84rem;
+  line-height: 1.35;
+}
+.tour {
+  padding: 0.45rem 1rem 2rem;
+}
+.tour-intro {
+  margin: 0.85rem 0.25rem 1rem;
+  color: #456579;
+  font-size: 0.87rem;
+  line-height: 1.4;
+}
+.train-section {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 17.5rem;
+  margin: 1.1rem 0 1.6rem;
+  padding: 1.15rem 1.15rem 0.9rem;
+  overflow: hidden;
+  border: 4px solid #17253e;
+  border-radius: 1.7rem 1.7rem 0.8rem 0.8rem;
+  background: #f9fbec;
+  box-shadow: 0 0.5rem 0 #17253e;
+}
+.train-section::after {
+  position: absolute;
+  z-index: 0;
+  right: 10%;
+  bottom: 0.8rem;
+  left: 10%;
+  height: 0.6rem;
+  border-radius: 999px;
+  background: #344258;
+  content: "";
+}
+.train-section.is-active {
+  outline: 0.28rem solid #f4a62a;
+  outline-offset: 0.13rem;
+}
+.section-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 70%;
+}
+.section-copy p {
+  margin-bottom: 0.25rem;
+  color: #46647a;
+  font-size: 0.73rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+.section-copy h2 {
+  margin-bottom: 0.45rem;
+  font-size: 1.38rem;
+  letter-spacing: -0.04em;
+}
+.section-copy span {
+  display: inline-block;
+  padding: 0.28rem 0.48rem;
+  border-radius: 0.5rem;
+  background: #d9e7d6;
+  color: #4a6549;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+.component-info-button {
+  display: block;
+  margin-top: 0.6rem;
+  padding: 0;
+  border: 0;
+  border-bottom: 2px solid currentcolor;
+  background: transparent;
+  color: #1a4c70;
+  font-size: 0.8rem;
+  font-weight: 900;
+  line-height: 1.25;
+  cursor: pointer;
+}
+.repair-art-frame {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  min-height: 10.75rem;
+  margin: 0.25rem 1rem 0.8rem;
+  padding: 0.25rem 0.5rem 0.6rem;
+}
+.repair-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 22rem;
+  max-height: 10rem;
+  object-fit: contain;
+  object-position: center;
+  opacity: 0.3;
+  filter: grayscale(1);
+  transition:
+    filter 300ms ease,
+    opacity 300ms ease,
+    transform 300ms ease;
+}
+.is-repaired .repair-art {
+  opacity: 1;
+  filter: grayscale(0);
+  transform: translateY(-0.25rem) scale(1.02);
+}
+.is-repaired .section-copy span {
+  background: #91cf7e;
+  color: #173c2b;
+}
+.repair-marker {
+  position: absolute;
+  z-index: 2;
+  right: 0.8rem;
+  bottom: 0.8rem;
+  display: grid;
+  place-items: center;
+  width: 4.2rem;
+  height: 4.2rem;
+  border: 3px solid #17253e;
+  border-radius: 50%;
+  background: #f4a62a;
+  color: #17253e;
+  font-size: 0.82rem;
+  font-weight: 900;
+  line-height: 1;
+  transform: rotate(7deg) translateY(0);
+}
+.repair-marker span {
+  display: block;
+  max-width: 3rem;
+  margin-top: 0.1rem;
+  font-size: 0.56rem;
+  text-transform: uppercase;
+}
+.repair-marker.done {
+  background: #82ca72;
+  font-size: 1.3rem;
+  transform: rotate(-7deg) translateY(0);
+}
+.reset-progress {
+  display: block;
+  margin: 0 auto 1.2rem;
+  padding: 0.35rem;
+  border: 0;
+  background: transparent;
+  color: #647b80;
+  font-size: 0.72rem;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+  cursor: pointer;
+}
+.repair-sheet {
+  position: fixed;
+  z-index: 10;
+  right: max(0.75rem, calc((100vw - 34rem) / 2 + 0.75rem));
+  bottom: 0.75rem;
+  left: max(0.75rem, calc((100vw - 34rem) / 2 + 0.75rem));
+  padding: 1.25rem;
+  border: 4px solid #17253e;
+  border-radius: 1.45rem;
+  background: #fffdf4;
+  box-shadow: 0 0.55rem 0 #17253e;
+}
+.repair-sheet h2 {
+  margin-bottom: 0.55rem;
+  font-size: 1.55rem;
+  letter-spacing: -0.045em;
+}
+.repair-summary {
+  margin-bottom: 0.8rem;
+  color: #385569;
+  line-height: 1.4;
+}
+.repair-sheet details {
+  color: #385569;
+  font-size: 0.88rem;
+}
+.repair-sheet summary {
+  cursor: pointer;
+  font-weight: 800;
+}
+.repair-sheet details p {
+  margin: 0.55rem 0 0;
+}
+.close-button {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.7rem;
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  border-radius: 50%;
+  background: #dcecf0;
+  color: #17253e;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.primary-action {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.9rem;
+  border: 0;
+  border-radius: 0.85rem;
+  background: #f4a62a;
+  color: #17253e;
+  font-weight: 900;
+  cursor: pointer;
+}
+.already-repaired {
+  margin: 1rem 0 0;
+  color: #297342;
+  font-weight: 800;
+}
+.not-found {
+  display: grid;
+  min-height: 100vh;
+  place-content: center;
+  padding: 2rem;
+  text-align: center;
+  background: #effbdc;
+}
+.not-found h1 {
+  margin: 0 0 1rem;
+}
+.not-found a {
+  color: #173f6a;
+  font-weight: 800;
+}

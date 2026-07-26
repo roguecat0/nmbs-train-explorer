@@ -1,0 +1,10 @@
+dist
+.nitro
+.output
+.vercel
+.vinxi
+.wrangler
+.netlify
+node_modules
+pnpm-lock.yaml
+app.config.timestamp_*.js
