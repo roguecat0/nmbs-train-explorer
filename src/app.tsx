@@ -1,6 +1,7 @@
 import { Route, Router } from "@solidjs/router";
 import { Suspense, type JSX } from "solid-js";
 import { GameProgressProvider } from "~/context/game-progress";
+import { LanguageProvider } from "~/i18n/language-context";
 import NotFound from "~/routes/[...404]";
 import Home from "~/routes/index";
 import RepairRoute from "~/routes/repair/[repairId]";
@@ -11,9 +12,11 @@ export default function App(): JSX.Element {
     <Router
       base={import.meta.env.BASE_URL}
       root={(props) => (
-        <GameProgressProvider>
-          <Suspense>{props.children}</Suspense>
-        </GameProgressProvider>
+        <LanguageProvider>
+          <GameProgressProvider>
+            <Suspense>{props.children}</Suspense>
+          </GameProgressProvider>
+        </LanguageProvider>
       )}
     >
       <Route path="/" component={Home} />

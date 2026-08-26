@@ -5,12 +5,14 @@ import { useGameProgress } from "~/context/game-progress";
 import ProgressHeader from "~/components/ProgressHeader";
 import RepairSheet from "~/components/RepairSheet";
 import TrainTour from "~/components/TrainTour";
+import { useLanguage } from "~/i18n/language-context";
 
 type GameScreenProps = { initialRepairId?: string };
 
 export default function GameScreen(props: GameScreenProps): JSX.Element {
   const navigate = useNavigate();
   const progress = useGameProgress();
+  const i18n = useLanguage();
   const [selectedRepair, setSelectedRepair] = createSignal<Repair | undefined>(
     repairs.find((repair) => repair.id === props.initialRepairId),
   );
@@ -29,8 +31,8 @@ export default function GameScreen(props: GameScreenProps): JSX.Element {
           ✦
         </div>
         <div>
-          <h2>Find the station markers</h2>
-          <p>Scan a repair QR code to reveal the next part of the train.</p>
+          <h2>{i18n.ui().welcomeTitle}</h2>
+          <p>{i18n.ui().welcomeDescription}</p>
         </div>
       </section>
       <TrainTour
@@ -39,7 +41,7 @@ export default function GameScreen(props: GameScreenProps): JSX.Element {
         onRepairSelect={(repair) => setSelectedRepair(repair)}
       />
       <button class="reset-progress" type="button" onClick={() => progress.reset()}>
-        Reset local progress
+        {i18n.ui().resetProgress}
       </button>
       <Show when={selectedRepair()}>
         {(repair) => (
