@@ -6,6 +6,7 @@
 
 ## tooling
 
+- Never run `pnpm dev` or `pnpm run dev`. The user manages the development server.
 - Before completing a code change, run the relevant checks and report the result.
   - For most code changes, run `pnpm lint:fix`, `pnpm lint`, `pnpm typecheck`, and `pnpm format:check`. Run `pnpm format` if formatting is needed.
   - Run `pnpm build` when the change touches SolidStart routing, Vite/build config, server/client entry files, dependencies, or anything that could affect production output.
