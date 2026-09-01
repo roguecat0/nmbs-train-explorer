@@ -1,0 +1,45 @@
+loki.source.syslog "nginx" {
+  listener {
+    address       = "127.0.0.1:1514"
+    protocol      = "udp"
+    syslog_format = "rfc3164"
+
+    labels = {
+      environment  = "production",
+      service_name = "nmbs-train-explorer",
+      source       = "nginx",
+    }
+  }
+
+  forward_to = [loki.process.nginx.receiver]
+}
+
+loki.process "nginx" {
+  forward_to = [loki.write.grafana_cloud.receiver]
+
+  stage.json {
+    expressions = {
+      bytes       = "bytes",
+      client_ip   = "client_ip",
+      duration_ms = "duration_ms",
+      method      = "method",
+      path        = "path",
+      request_id  = "request_id",
+      status      = "status",
+      type        = "type",
+      user_agent  = "user_agent",
+      visitor_id  = "visitor_id",
+    }
+  }
+}
+
+loki.write "grafana_cloud" {
+  endpoint {
+    url = sys.env("GRAFANA_LOKI_URL")
+
+    basic_auth {
+      username = sys.env("GRAFANA_LOKI_USERNAME")
+      password = sys.env("GRAFANA_CLOUD_TOKEN")
+    }
+  }
+}
