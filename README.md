@@ -18,43 +18,17 @@ The first UI draft is structured around:
   and screen composition;
 - `src/context/game-progress.tsx` for client-only progress state.
 
-## Static Docker + Grafana LGTM observability
+## Docker deployment
 
-This repo includes a local observability stack for learning Grafana with a static Nginx deployment:
+The `Dockerfile` builds the static app and serves it through Nginx on port `10000`, Render's default web-service port.
 
-- `app`: static Solid app served by Nginx with the official Nginx OpenTelemetry module.
-- `alloy`: receives OTLP traces from Nginx and tails Nginx logs.
-- `tempo`: stores traces.
-- `loki`: stores logs.
-- `prometheus`: stores metrics from the Nginx Prometheus exporter and Alloy.
-- `grafana`: visualizes Prometheus, Loki, and Tempo.
+Create a Render **Web Service** with language set to **Docker** and the repository-root `Dockerfile`. No Docker command is needed.
 
-Run it with Docker Compose:
+Nginx writes one structured JSON access-log event per request to stdout. Render captures these logs for troubleshooting; Hobby workspaces retain them for 7 days.
+
+To run the production image locally:
 
 ```bash
-docker compose up --build
+docker build -t nmbs-train-explorer .
+docker run --rm -p 10000:10000 nmbs-train-explorer
 ```
-
-If your Docker install uses the legacy binary, use:
-
-```bash
-docker-compose up --build
-```
-
-Local URLs:
-
-- App: http://localhost:8080
-- Grafana: http://localhost:3000
-- Prometheus: http://localhost:9090
-- Loki: http://localhost:3100
-- Tempo: http://localhost:3200
-- Alloy UI: http://localhost:12345
-- Nginx exporter: http://localhost:9113/metrics
-
-Useful first checks in Grafana:
-
-- Explore > Prometheus: `nginx_http_requests_total`
-- Explore > Loki: `{job="nginx"}`
-- Explore > Tempo: search service `nmbs-train-explorer-nginx`
-
-Nginx exports spans to Alloy at `alloy:4317`. Alloy batches and forwards those traces to Tempo at `tempo:4317`. Nginx access logs are written as JSON and include `trace_id` and `span_id` so logs can link back to Tempo traces.
