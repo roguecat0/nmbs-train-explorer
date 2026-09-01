@@ -23,6 +23,11 @@ export default function GameScreen(props: GameScreenProps): JSX.Element {
     navigate("/", { replace: true });
   };
 
+  const completeRepair = (repairId: string): void => {
+    progress.complete(repairId);
+    navigator.sendBeacon(`/events/repair-completed/${encodeURIComponent(repairId)}`);
+  };
+
   return (
     <main class="game-shell">
       <ProgressHeader completedCount={completedCount()} isComplete={progress.isComplete} />
@@ -48,7 +53,7 @@ export default function GameScreen(props: GameScreenProps): JSX.Element {
           <RepairSheet
             repair={repair()}
             completed={progress.isComplete(repair().id)}
-            onComplete={() => progress.complete(repair().id)}
+            onComplete={() => completeRepair(repair().id)}
             onClose={closeSheet}
           />
         )}

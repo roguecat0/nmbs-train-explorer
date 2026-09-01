@@ -24,7 +24,9 @@ The `Dockerfile` builds the static app and serves it through Nginx on port `1000
 
 Create a Render **Web Service** with language set to **Docker** and the repository-root `Dockerfile`. No Docker command is needed.
 
-Nginx writes one structured JSON access-log event per request to stdout. Render captures these logs for troubleshooting; Hobby workspaces retain them for 7 days.
+Nginx writes structured JSON access logs to stdout. The `path` field preserves the browser-requested route, including SPA routes such as `/repair/brake-system`, rather than the internal `/index.html` fallback. Render captures these logs for troubleshooting; Hobby workspaces retain them for 7 days.
+
+Nginx assigns each browser a first-party `nmbs_visitor_id` cookie and includes it in every log event. Repair completions emit a `POST` request to `/events/repair-completed/<repair-id>` and are logged with `"type":"repair_completed"`.
 
 To run the production image locally:
 
