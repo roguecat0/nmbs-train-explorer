@@ -1,6 +1,6 @@
-import brakeSystemImage from "../../sample-images/tile000.png";
+import driversCabImage from "../../sample-images/tile000.png";
 import headlightsImage from "../../sample-images/tile001.png";
-import wheelAssemblyImage from "../../sample-images/tile002.png";
+import brakeSystemImage from "../../sample-images/tile002.png";
 import wheelsImage from "../../sample-images/tile003.png";
 import passengerDoorImage from "../../sample-images/tile004.png";
 import ventilationImage from "../../sample-images/tile005.png";
@@ -18,7 +18,7 @@ export const repairs: Repair[] = [
   {
     id: "drivers-cab",
     color: "sunshine",
-    image: brakeSystemImage,
+    image: driversCabImage,
   },
   {
     id: "headlights",
@@ -28,7 +28,7 @@ export const repairs: Repair[] = [
   {
     id: "brake-system",
     color: "coral",
-    image: wheelAssemblyImage,
+    image: brakeSystemImage,
   },
   {
     id: "wheels",
