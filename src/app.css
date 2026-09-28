@@ -172,7 +172,6 @@ h1 {
 .mini-train i:first-child {
   height: 1.55rem;
   border-radius: 0.7rem 0.3rem 0.25rem 0.25rem;
-  background: var(--color-accent);
 }
 .welcome-card {
   display: flex;
@@ -348,10 +347,15 @@ h1 {
   text-transform: uppercase;
 }
 .repair-marker.done {
+  width: 5rem;
+  height: 5rem;
   background: var(--color-success);
   color: var(--color-surface);
   font-size: 1.3rem;
   transform: rotate(-7deg) translateY(0);
+}
+.repair-marker.done span {
+  max-width: 4rem;
 }
 .reset-progress {
   display: block;

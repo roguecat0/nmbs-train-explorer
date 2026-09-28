@@ -32,6 +32,7 @@ export type UiTranslations = {
   latestScan: string;
   completedSummary: string;
   learnMore: string;
+  justRepaired: string;
   alreadyRepaired: string;
   repairAction: string;
   notFoundEyebrow: string;

@@ -30,6 +30,7 @@ export const fr: Translations<RepairId> = {
     completedSummary:
       "Cette pièce fonctionne à nouveau. Continue ton exploration pour réparer le reste du train.",
     learnMore: "En savoir plus",
+    justRepaired: "✓ Tu as réparé cette pièce !",
     alreadyRepaired: "✓ Cette pièce est déjà réparée.",
     repairAction: "Réparer cette pièce",
     notFoundEyebrow: "MAUVAIS QUAI",
