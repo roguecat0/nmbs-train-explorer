@@ -1,11 +1,9 @@
+import { createContext, createSignal, useContext, type JSX, type ParentProps } from "solid-js";
 import {
-  createContext,
-  createSignal,
-  onMount,
-  useContext,
-  type JSX,
-  type ParentProps,
-} from "solid-js";
+  clearStoredRepairIds,
+  readStoredRepairIds,
+  writeStoredRepairIds,
+} from "~/lib/repair-storage";
 
 const STORAGE_KEY = "train-repair-progress";
 
@@ -19,27 +17,18 @@ type GameProgress = {
 const GameProgressContext = createContext<GameProgress>();
 
 export function GameProgressProvider(props: ParentProps): JSX.Element {
-  const [completed, setCompleted] = createSignal<string[]>([]);
-
-  onMount(() => {
-    try {
-      const stored = window.localStorage.getItem(STORAGE_KEY);
-      if (stored) setCompleted(JSON.parse(stored));
-    } catch {
-      window.localStorage.removeItem(STORAGE_KEY);
-    }
-  });
+  const [completed, setCompleted] = createSignal<string[]>(readStoredRepairIds(STORAGE_KEY));
 
   const complete = (repairId: string): void => {
     if (completed().includes(repairId)) return;
     const next = [...completed(), repairId];
     setCompleted(next);
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+    writeStoredRepairIds(STORAGE_KEY, next);
   };
 
   const reset = (): void => {
     setCompleted([]);
-    window.localStorage.removeItem(STORAGE_KEY);
+    clearStoredRepairIds(STORAGE_KEY);
   };
 
   const progress: GameProgress = {

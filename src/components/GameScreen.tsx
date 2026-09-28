@@ -1,4 +1,4 @@
-import { createSignal, Show, type JSX } from "solid-js";
+import { createEffect, createSignal, on, Show, type JSX } from "solid-js";
 import { useNavigate } from "@solidjs/router";
 import { Repair, repairs } from "~/data/repairs";
 import { useGameProgress } from "~/context/game-progress";
@@ -6,6 +6,7 @@ import ProgressHeader from "~/components/ProgressHeader";
 import RepairSheet from "~/components/RepairSheet";
 import TrainTour from "~/components/TrainTour";
 import { useLanguage } from "~/i18n/language-context";
+import { reportRepairStarted } from "~/lib/repair-events";
 
 type GameScreenProps = { initialRepairId?: string };
 
@@ -17,6 +18,16 @@ export default function GameScreen(props: GameScreenProps): JSX.Element {
     repairs.find((repair) => repair.id === props.initialRepairId),
   );
   const completedCount = (): number => progress.completed().length;
+
+  createEffect(
+    on(
+      () => props.initialRepairId,
+      (repairId) => {
+        const repair = repairs.find((repair) => repair.id === repairId);
+        if (repair && !progress.isComplete(repair.id)) reportRepairStarted(repair.id);
+      },
+    ),
+  );
 
   const closeSheet = (): void => {
     setSelectedRepair(undefined);

@@ -73,6 +73,17 @@ Nginx writes structured JSON access logs to stdout. The `path` field preserves t
 
 Nginx assigns each browser a first-party `nmbs_visitor_id` cookie and includes it in every log event. Repair completions emit a `POST` request to `/events/repair-completed/<repair-id>` and are logged with `"type":"repair_completed"`.
 
+The first visit to each valid, incomplete repair route also emits a `POST` to
+`/events/repair-started/<repair-id>`, logged with `"type":"repair_started"`.
+The app loads saved progress before checking the route and keeps a separate
+`train-repair-started` list in local storage once the browser queues the beacon.
+Refreshes and rescans skip recorded starts; resetting game progress preserves
+this list. Home and unknown repair routes emit no start event. Clearing browser
+storage or using another browser allows new start events. When storage is
+unavailable, starts are deduplicated only within the current page. Beacons are
+best-effort analytics: queuing does not confirm delivery, and simultaneous first
+visits in separate tabs can still produce duplicate events.
+
 Nginx sends each access log to both Render stdout and the in-container Grafana Alloy collector. Alloy parses the JSON and forwards it to Grafana Cloud Loki over HTTPS. In Render, configure these secret environment variables:
 
 - `GRAFANA_LOKI_URL`: the full Grafana Cloud Loki push URL ending in `/loki/api/v1/push`.
