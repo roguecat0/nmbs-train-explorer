@@ -10,7 +10,7 @@ type ProgressHeaderProps = {
 
 export default function ProgressHeader(props: ProgressHeaderProps): JSX.Element {
   const i18n = useLanguage();
-  const percentage = (): string => `${(props.completedCount / repairs.length) * 100}%`;
+  const progressScale = (): string => `scaleX(${props.completedCount / repairs.length})`;
 
   return (
     <header class="progress-header">
@@ -47,9 +47,13 @@ export default function ProgressHeader(props: ProgressHeaderProps): JSX.Element 
       </div>
       <div
         class="progress-track"
+        role="progressbar"
+        aria-valuemin={0}
+        aria-valuemax={repairs.length}
+        aria-valuenow={props.completedCount}
         aria-label={i18n.ui().progressLabel(props.completedCount, repairs.length)}
       >
-        <span style={{ width: percentage() }} />
+        <span style={{ transform: progressScale() }} />
       </div>
       <div class="mini-train" aria-hidden="true">
         <For each={repairs}>

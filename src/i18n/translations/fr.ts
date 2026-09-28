@@ -20,15 +20,16 @@ export const fr: Translations<RepairId> = {
     repaired: "Réparé",
     awaitingRepair: "À réparer",
     viewComponentInfo: "Voir les infos sur la pièce",
-    componentImageAlt: "Illustration d’une pièce de train",
     scan: "Scanne",
     qrCode: "Code QR",
     resetProgress: "Effacer la progression locale",
+    resetConfirmation:
+      "Effacer toutes les réparations ? Tu devras ensuite réparer les pièces à nouveau.",
     repairLabel: (title) => `Réparation de ${title}`,
     closeRepairDetails: "Fermer les détails de la réparation",
     closeRepairMessage: "Fermer le message de réparation",
     repairComplete: "RÉPARATION TERMINÉE",
-    latestScan: "TON DERNIER SCAN",
+    repairPending: "À RÉPARER",
     completedSummary:
       "Cette pièce fonctionne à nouveau. Continue ton exploration pour réparer le reste du train.",
     learnMore: "En savoir plus",
@@ -41,37 +42,31 @@ export const fr: Translations<RepairId> = {
   repairs: {
     "drivers-cab": {
       title: "Cabine de conduite",
-      section: "Avant du train",
       summary: "Répare les commandes qui aident le conducteur à mener chaque trajet à bon port.",
       fact: "La cabine est le centre de commande du train.",
     },
     headlights: {
       title: "Phares",
-      section: "Avant du train",
       summary: "Rallume les phares qui éclairent la voie devant le train.",
       fact: "Des phares puissants permettent de bien voir le train.",
     },
     "brake-system": {
       title: "Système de freinage",
-      section: "Voiture motrice",
       summary: "Répare le système qui permet au train de s’arrêter en toute sécurité.",
       fact: "Toutes les voitures agissent ensemble lorsque le train freine.",
     },
     wheels: {
       title: "Roues",
-      section: "Voiture motrice",
       summary: "Prépare les roues pour que le train roule sans à-coups sur les rails.",
       fact: "Des roues en acier roulent sur des rails en acier.",
     },
     "passenger-doors": {
       title: "Portes voyageurs",
-      section: "Voiture voyageurs",
       summary: "Répare les portes pour que tout le monde puisse monter en sécurité.",
       fact: "Les portes d’un train sont conçues pour fonctionner ensemble.",
     },
     "roof-ventilation": {
       title: "Ventilation du toit",
-      section: "Voiture voyageurs",
       summary: "Fais à nouveau circuler l’air frais dans la voiture.",
       fact: "Les équipements installés sur le toit d’un train cachent bien leur jeu.",
     },

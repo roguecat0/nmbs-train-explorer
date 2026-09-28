@@ -2,7 +2,6 @@ export type Language = "nl" | "fr";
 
 export type RepairCopy = {
   title: string;
-  section: string;
   summary: string;
   fact: string;
 };
@@ -22,15 +21,15 @@ export type UiTranslations = {
   repaired: string;
   awaitingRepair: string;
   viewComponentInfo: string;
-  componentImageAlt: string;
   scan: string;
   qrCode: string;
   resetProgress: string;
+  resetConfirmation: string;
   repairLabel: (title: string) => string;
   closeRepairDetails: string;
   closeRepairMessage: string;
   repairComplete: string;
-  latestScan: string;
+  repairPending: string;
   completedSummary: string;
   learnMore: string;
   alreadyRepaired: string;

@@ -120,6 +120,7 @@ try {
           await page.goto(url, { waitUntil: "networkidle" });
           await page.locator("main").waitFor({ state: "visible" });
           await page.evaluate(waitForFonts);
+          await page.evaluate(waitForImages);
           if (scenario.route.startsWith("repair/") && scenario.name !== "unknown-repair") {
             await page.locator(".repair-sheet").waitFor({ state: "visible" });
           }
@@ -234,6 +235,15 @@ function findBrowserExecutable() {
 /** @returns {Promise<void>} */
 async function waitForFonts() {
   await document.fonts.ready;
+}
+
+/** @returns {Promise<void>} */
+async function waitForImages() {
+  for (const image of document.images) {
+    image.scrollIntoView({ block: "center", behavior: "instant" });
+    await image.decode();
+  }
+  window.scrollTo({ top: 0, behavior: "instant" });
 }
 
 /** @returns {string} */

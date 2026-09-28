@@ -48,6 +48,10 @@ export default function GameScreen(props: GameScreenProps): JSX.Element {
     }
   };
 
+  const resetProgress = (): void => {
+    if (window.confirm(i18n.ui().resetConfirmation)) progress.reset();
+  };
+
   return (
     <main class="game-shell">
       <ProgressHeader completedCount={completedCount()} isComplete={progress.isComplete} />
@@ -65,7 +69,7 @@ export default function GameScreen(props: GameScreenProps): JSX.Element {
         activeRepairId={selectedRepair()?.id}
         onRepairSelect={(repair) => setSelectedRepair(repair)}
       />
-      <button class="reset-progress" type="button" onClick={() => progress.reset()}>
+      <button class="reset-progress" type="button" onClick={resetProgress}>
         {i18n.ui().resetProgress}
       </button>
       <Show when={selectedRepair()}>
