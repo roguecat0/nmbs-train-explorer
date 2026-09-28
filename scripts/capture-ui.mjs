@@ -21,6 +21,7 @@ const { values } = parseArgs({
     height: { type: "string", default: "844" },
     language: { type: "string" },
     repair: { type: "string" },
+    feedback: { type: "boolean", default: false },
     browser: { type: "string" },
   },
 });
@@ -50,7 +51,7 @@ if (values.repair && !repairIds.includes(values.repair)) {
 
 const selectedRepairs = values.repair ? [values.repair] : repairIds;
 const mixedProgress = ["drivers-cab", "brake-system", "roof-ventilation"];
-const scenarios = [
+const repairScenarios = [
   { name: "home-empty", route: "", completed: [] },
   { name: "home-partial", route: "", completed: mixedProgress },
   { name: "home-complete", route: "", completed: repairIds },
@@ -62,6 +63,14 @@ const scenarios = [
     { name: `${repairId}-expanded`, route: `repair/${repairId}`, completed: [], expanded: true },
   ]),
 ];
+const scenarios = values.feedback
+  ? repairIds.map((repairId, index) => ({
+      name: `feedback-after-${index + 1}`,
+      route: `repair/${repairId}`,
+      completed: repairIds.slice(0, index),
+      feedback: true,
+    }))
+  : repairScenarios;
 
 const outputDirectory = join("artifacts", "ui", new Date().toISOString().replaceAll(":", "-"));
 const browserExecutable = findBrowserExecutable();
@@ -115,6 +124,11 @@ try {
             await page.locator(".repair-sheet").waitFor({ state: "visible" });
           }
           if (scenario.expanded) await page.locator(".repair-sheet summary").click();
+          if (scenario.feedback) {
+            await page.locator(".repair-sheet .primary-action").click();
+            await page.locator(".repair-sheet").waitFor({ state: "detached" });
+            await page.waitForURL(baseUrl.href);
+          }
           const file = `${name}.png`;
           await page.screenshot({
             path: join(outputDirectory, file),
@@ -139,6 +153,14 @@ try {
             scenario: scenario.name,
             url,
             completed: scenario.completed,
+            ...(scenario.feedback
+              ? {
+                  feedback: {
+                    popupVisible: await page.locator(".repair-feedback[open]").isVisible(),
+                    progress: await page.locator(".count-pill").innerText(),
+                  },
+                }
+              : {}),
             file,
             sheetFile,
           });

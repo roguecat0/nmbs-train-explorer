@@ -18,6 +18,21 @@ The first UI draft is structured around:
   and screen composition;
 - `src/context/game-progress.tsx` for client-only progress state.
 
+## Repair feedback
+
+Completing a repair closes its details automatically. Configure the replacement
+popups in [`src/data/repair-messages.ts`](src/data/repair-messages.ts):
+
+- `afterRepairs` maps the total number of completed repairs to a message with
+  Dutch/French `title`, `body`, and `action` text. An omitted count or `null`
+  means no popup. Initially only counts 1 and 2 have encouragement messages.
+- `allRepaired` takes precedence when every repair is done. Set it to `null`
+  to disable the congratulations popup, or change `fireworks` to toggle its
+  animation. Reduced-motion preferences disable animation automatically.
+
+Messages appear only after a new repair, never on refresh or reopening an already
+completed part.
+
 ## Local verification
 
 The agent verifies changes locally, then the user reviews them before deciding
@@ -40,12 +55,16 @@ For UI review, capture the running app in isolated browser contexts:
 ```bash
 pnpm ui:capture --url http://localhost:5173/
 pnpm ui:capture --url http://localhost:5173/ --width 390 --language fr --repair roof-ventilation
+pnpm ui:capture --url http://localhost:5173/ --feedback --height 568
 ```
 
 Use the actual app base URL, including a deployment base path when applicable.
 The default capture covers both languages at 320, 390, and 768 pixels wide,
 empty/partial/complete progress, all six repair sheets in pending/completed/expanded
 states, and unknown URLs. Add `--height 568` to inspect short screens.
+Use `--feedback` to capture the state after clicking Repair at each completion
+count (1–6), including milestones configured without a popup. The manifest records
+whether a popup appeared and the resulting progress count.
 The helper does not start a server or modify your browser's progress.
 It reuses installed Chrome/Chromium or an existing Playwright browser cache;
 it never downloads a browser. Use `--browser /path/to/chrome` or `UI_BROWSER_PATH`

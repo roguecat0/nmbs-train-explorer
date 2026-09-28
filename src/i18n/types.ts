@@ -28,11 +28,11 @@ export type UiTranslations = {
   resetProgress: string;
   repairLabel: (title: string) => string;
   closeRepairDetails: string;
+  closeRepairMessage: string;
   repairComplete: string;
   latestScan: string;
   completedSummary: string;
   learnMore: string;
-  justRepaired: string;
   alreadyRepaired: string;
   repairAction: string;
   notFoundEyebrow: string;

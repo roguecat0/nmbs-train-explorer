@@ -9,7 +9,8 @@ export const fr: Translations<RepairId> = {
     french: "Français",
     headerEyebrow: "Sauvetage du train SNCB",
     headerTitle: "Redonne vie au train",
-    progressLabel: (completed, total) => `${completed} réparations sur ${total} terminées`,
+    progressLabel: (completed, total) =>
+      `${completed} ${completed === 1 ? "réparation" : "réparations"} sur ${total} ${completed === 1 ? "terminée" : "terminées"}`,
     welcomeTitle: "Trouve les repères dans la gare",
     welcomeDescription:
       "Scanne le code QR d’une réparation et découvre la prochaine partie du train.",
@@ -25,12 +26,12 @@ export const fr: Translations<RepairId> = {
     resetProgress: "Effacer la progression locale",
     repairLabel: (title) => `Réparation de ${title}`,
     closeRepairDetails: "Fermer les détails de la réparation",
+    closeRepairMessage: "Fermer le message de réparation",
     repairComplete: "RÉPARATION TERMINÉE",
     latestScan: "TON DERNIER SCAN",
     completedSummary:
       "Cette pièce fonctionne à nouveau. Continue ton exploration pour réparer le reste du train.",
     learnMore: "En savoir plus",
-    justRepaired: "✓ Tu as réparé cette pièce !",
     alreadyRepaired: "✓ Cette pièce est déjà réparée.",
     repairAction: "Réparer cette pièce",
     notFoundEyebrow: "MAUVAIS QUAI",

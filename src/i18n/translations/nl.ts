@@ -24,12 +24,12 @@ export const nl: Translations<RepairId> = {
     resetProgress: "Lokale voortgang wissen",
     repairLabel: (title) => `Reparatie van ${title}`,
     closeRepairDetails: "Reparatiedetails sluiten",
+    closeRepairMessage: "Reparatiebericht sluiten",
     repairComplete: "REPARATIE VOLTOOID",
     latestScan: "JE LAATSTE SCAN",
     completedSummary:
       "Dit onderdeel werkt weer. Ga verder op ontdekking en herstel de rest van de trein.",
     learnMore: "Meer ontdekken",
-    justRepaired: "✓ Je hebt dit onderdeel gerepareerd!",
     alreadyRepaired: "✓ Dit onderdeel is al gerepareerd.",
     repairAction: "Repareer dit onderdeel",
     notFoundEyebrow: "VERKEERD PERRON",

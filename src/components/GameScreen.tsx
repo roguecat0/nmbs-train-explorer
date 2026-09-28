@@ -2,6 +2,7 @@ import { createEffect, createSignal, on, Show, type JSX } from "solid-js";
 import { useNavigate } from "@solidjs/router";
 import { Repair, repairs } from "~/data/repairs";
 import { useGameProgress } from "~/context/game-progress";
+import { useRepairFeedback } from "~/context/repair-feedback";
 import ProgressHeader from "~/components/ProgressHeader";
 import RepairSheet from "~/components/RepairSheet";
 import TrainTour from "~/components/TrainTour";
@@ -13,6 +14,7 @@ type GameScreenProps = { initialRepairId?: string };
 export default function GameScreen(props: GameScreenProps): JSX.Element {
   const navigate = useNavigate();
   const progress = useGameProgress();
+  const feedback = useRepairFeedback();
   const i18n = useLanguage();
   const [selectedRepair, setSelectedRepair] = createSignal<Repair | undefined>(
     repairs.find((repair) => repair.id === props.initialRepairId),
@@ -35,8 +37,15 @@ export default function GameScreen(props: GameScreenProps): JSX.Element {
   };
 
   const completeRepair = (repairId: string): void => {
+    if (progress.isComplete(repairId)) return;
     progress.complete(repairId);
-    navigator.sendBeacon(`/events/repair-completed/${encodeURIComponent(repairId)}`);
+    feedback.show(completedCount());
+    closeSheet();
+    try {
+      navigator.sendBeacon(`/events/repair-completed/${encodeURIComponent(repairId)}`);
+    } catch {
+      // Best-effort analytics must not interrupt a completed repair.
+    }
   };
 
   return (

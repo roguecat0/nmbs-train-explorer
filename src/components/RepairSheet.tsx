@@ -1,4 +1,4 @@
-import { createSignal, Show, type JSX } from "solid-js";
+import { Show, type JSX } from "solid-js";
 import type { Repair } from "~/data/repairs";
 import { useLanguage } from "~/i18n/language-context";
 
@@ -12,12 +12,6 @@ type RepairSheetProps = {
 export default function RepairSheet(props: RepairSheetProps): JSX.Element {
   const i18n = useLanguage();
   const copy = () => i18n.repair(props.repair.id);
-  const [repairedHere, setRepairedHere] = createSignal<string>();
-
-  const complete = (): void => {
-    props.onComplete();
-    setRepairedHere(props.repair.id);
-  };
 
   return (
     <aside class="repair-sheet" aria-label={i18n.ui().repairLabel(copy().title)}>
@@ -39,15 +33,9 @@ export default function RepairSheet(props: RepairSheetProps): JSX.Element {
       </details>
       <Show
         when={!props.completed}
-        fallback={
-          <p class="already-repaired">
-            {repairedHere() === props.repair.id
-              ? i18n.ui().justRepaired
-              : i18n.ui().alreadyRepaired}
-          </p>
-        }
+        fallback={<p class="already-repaired">{i18n.ui().alreadyRepaired}</p>}
       >
-        <button class="primary-action" type="button" onClick={complete}>
+        <button class="primary-action" type="button" onClick={() => props.onComplete()}>
           {i18n.ui().repairAction}
         </button>
       </Show>
