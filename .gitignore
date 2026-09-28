@@ -13,6 +13,9 @@ app.config.timestamp_*.js
 # dependencies
 /node_modules
 
+# Local UI review captures
+/artifacts/
+
 # IDEs and editors
 /.idea
 .project

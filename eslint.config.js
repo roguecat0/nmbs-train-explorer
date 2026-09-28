@@ -16,7 +16,16 @@ const nodeGlobals = {
 
 export default tseslint.config(
   {
-    ignores: [".nitro/**", ".output/**", "dist/**", "node_modules/**", "app.config.timestamp_*.js"],
+    ignores: [
+      ".agents/**",
+      ".codex/**",
+      ".nitro/**",
+      ".output/**",
+      "dist/**",
+      "artifacts/**",
+      "node_modules/**",
+      "app.config.timestamp_*.js",
+    ],
   },
   js.configs.recommended,
   ...tseslint.configs.recommended,
@@ -33,7 +42,7 @@ export default tseslint.config(
   {
     files: ["eslint.config.js", "scripts/**/*.mjs", "vite.config.ts"],
     languageOptions: {
-      globals: nodeGlobals,
+      globals: { ...nodeGlobals, ...browserGlobals },
     },
   },
   prettier,
