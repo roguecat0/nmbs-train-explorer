@@ -12,8 +12,7 @@ export const fr: Translations<RepairId> = {
     progressLabel: (completed, total) =>
       `${completed} ${completed === 1 ? "réparation" : "réparations"} sur ${total} ${completed === 1 ? "terminée" : "terminées"}`,
     welcomeTitle: "Trouve les repères dans la gare",
-    welcomeDescription:
-      "Scanne le code QR d’une réparation et découvre la prochaine partie du train.",
+    welcomeDescription: "Scannez un code QR pour une réparation et découvrez plus d’informations sur la partie du train.",
     tourLabel: "Parcours de réparation du train",
     tourIntro:
       "Suis le train de la cabine à la voiture. Scanne un repère dans la gare pour réparer la pièce correspondante.",

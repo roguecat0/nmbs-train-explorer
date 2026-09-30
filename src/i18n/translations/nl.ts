@@ -11,7 +11,7 @@ export const nl: Translations<RepairId> = {
     headerTitle: "Breng de trein weer tot leven",
     progressLabel: (completed, total) => `${completed} van ${total} reparaties voltooid`,
     welcomeTitle: "Vind de stationsmarkeringen",
-    welcomeDescription: "Scan een QR-code voor een reparatie en ontdek het volgende treindeel.",
+    welcomeDescription: "Scan een QR-code voor een reparatie en ontdek meer informatie over het treindeel.",
     tourLabel: "Reparatieronde van de trein",
     tourIntro:
       "Volg de trein van de cabine tot het rijtuig. Scan een stationsmarkering om het bijbehorende onderdeel te repareren.",
