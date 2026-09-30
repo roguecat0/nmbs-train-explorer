@@ -1,9 +1,9 @@
-import driversCabImage from "../../sample-images/tile000.png";
-import headlightsImage from "../../sample-images/tile001.png";
-import brakeSystemImage from "../../sample-images/tile002.png";
-import wheelsImage from "../../sample-images/tile003.png";
-import passengerDoorImage from "../../sample-images/tile004.png";
-import ventilationImage from "../../sample-images/tile005.png";
+import driversCabImage from "../../sample-images/tile000.webp";
+import headlightsImage from "../../sample-images/tile001.webp";
+import brakeSystemImage from "../../sample-images/tile002.webp";
+import wheelsImage from "../../sample-images/tile003.webp";
+import passengerDoorImage from "../../sample-images/tile004.webp";
+import ventilationImage from "../../sample-images/tile005.webp";
 
 export type Repair = {
   id: RepairId;
