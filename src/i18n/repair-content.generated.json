@@ -1,0 +1,82 @@
+{
+  "painting": {
+    "title": {
+      "nl": "Schildering",
+      "fr": "Peinture"
+    },
+    "details": {
+      "nl": "De huidige NMBS-treinen zijn hoofdzakelijk geschilderd in een combinatie van wit, geel en rood.\n\nWit is de basiskleur van de trein. Het geeft een moderne, frisse uitstraling en zorgt voor een uniforme huisstijl over het reizigersmaterieel.\n\nGeel wordt vooral gebruikt op de fronten en rond de cabinezones om de zichtbaarheid van de trein te vergroten, vooral bij regen, mist of schemering.\n\nRood wordt gebruikt als accentkleur in de NMBS-huisstijl en verwijst naar de Belgische nationale kleuren. Het versterkt bovendien de herkenbaarheid van de trein.\n\nDe keuze voor deze kleuren is dus niet alleen esthetisch, maar ook functioneel: de trein moet van ver herkenbaar zijn, goed zichtbaar zijn in alle omstandigheden en tegelijk een duidelijke NMBS-identiteit uitstralen.",
+      "fr": "Les trains actuels de la SNCB sont principalement peints dans une combinaison de blanc, de jaune et de rouge.\n\nLe blanc est la couleur de base du train. Il confère un aspect moderne et frais et assure une identité visuelle uniforme sur l'ensemble du matériel roulant.\n\nLe jaune est principalement utilisé sur les parties avant et autour des cabines afin d’améliorer la visibilité du train, notamment en cas de pluie, de brouillard ou au crépuscule.\n\nLe rouge est utilisé comme couleur d’accent dans l’identité visuelle de la SNCB et fait référence aux couleurs nationales belges. Il renforce en outre la reconnaissance du train.\n\nLe choix de ces couleurs n’est donc pas seulement esthétique, mais aussi fonctionnel : le train doit être reconnaissable de loin, bien visible en toutes circonstances et, en même temps, refléter clairement l’identité de la SNCB."
+    }
+  },
+  "drivers-cab": {
+    "title": {
+      "nl": "Stuurpost",
+      "fr": "Salle de contrôle"
+    },
+    "details": {
+      "nl": "De stuurpost, de werkplek van de treinbestuurder. Een kantoor met zicht op de wereld. Om onze treinbestuurder te helpen veilig het land te doorkruisen is er het ETCS systeem. Het European Train Control System) is een beveiligingssysteem dat voortdurend de snelheid van de trein bewaakt. Het systeem vergelijkt de werkelijke snelheid met de maximaal toegelaten snelheid op het traject. Als de treinbestuurder een sein of snelheidsbeperking niet respecteert, grijpt ETCS automatisch in en remt de trein af. ETCS vermindert zodoende het risico op menselijke fouten en verhoogt zo de veiligheid van het spoorverkeer. NMBS en Infrabel rollen ETCS uit op het volledige Belgische spoornet om treinverkeer veiliger en betrouwbaarder te maken.",
+      "fr": "La cabine de conduite, le poste de travail du conducteur de train. Un bureau avec vue sur le monde. Pour aider notre conducteur de train à traverser le pays en toute sécurité, il existe le système ETCS. L'European Train Control System (ETCS) est un système de sécurité qui surveille en permanence la vitesse du train. Le système compare la vitesse réelle à la vitesse maximale autorisée sur le tronçon. Si le conducteur ne respecte pas un signal ou une limitation de vitesse, l'ETCS intervient automatiquement et freine le train. L’ETCS réduit ainsi le risque d’erreurs humaines et renforce la sécurité du trafic ferroviaire. La SNCB et Infrabel déploient l’ETCS sur l’ensemble du réseau ferroviaire belge afin de rendre le trafic ferroviaire plus sûr et plus fiable."
+    }
+  },
+  "headlights": {
+    "title": {
+      "nl": "Koplichten",
+      "fr": "Phares"
+    },
+    "details": {
+      "nl": "Wist je dat de lichten van een trein niet enkel dienen om beter te kunnen zien in de verte? De frontseinen (de  witte lichten aan de voorzijde) geven aan dat dit de voorkant van de trein is.\nAchteraan heb je de sluitseinen, dit zijn één of twee rode lichten aan de achterzijde die het einde van de trein aangeven.",
+      "fr": "Saviez-vous que les feux d'un train ne servent pas uniquement à mieux voir au loin ? Les feux avant (les feux blancs situés à l'avant) indiquent qu'il s'agit de l'avant du train.\nÀ l'arrière, on trouve les feux de queue : il s'agit d'un ou deux feux rouges situés à l'arrière qui signalent la fin du train."
+    }
+  },
+  "brake-system": {
+    "title": {
+      "nl": "Remsysteem",
+      "fr": "Système de freinage"
+    },
+    "details": {
+      "nl": "Een moderne trein beschikt meestal over meerdere remsystemen die elkaar aanvullen. De belangrijkste zijn:\n\n1. Pneumatische rem (luchtrem) Dit is het basisremsysteem van vrijwel alle treinen.\nVeiligheidsvoordeel: bij een leidingbreuk remt de trein automatisch.\n\n2. Elektrische rem\nDe tractiemotoren werken als generator en zetten bewegingsenergie om in elektrische energie.\nVermindert slijtage van remblokken en remschijven.\n\n3. Recuperatierem\nEen vorm van elektrische rem. De opgewekte energie wordt terug op de bovenleiding gezet en kan door andere treinen worden gebruikt. Verlaagt het energieverbruik aanzienlijk.\n\n4. Weerstandsrem (rheostatische rem)\nIndien de energie niet kan worden teruggeleverd aan het net, wordt ze omgezet in warmte in remweerstanden op het dak.",
+      "fr": "Un train moderne dispose généralement de plusieurs systèmes de freinage qui se complètent. Les principaux sont les suivants :\n\n1. Frein pneumatique (frein à air) : il s'agit du système de freinage de base de la quasi-totalité des trains.\nAvantage en matière de sécurité : en cas de rupture de conduite, le train freine automatiquement.\n\n2. Frein électrique\nLes moteurs de traction fonctionnent comme des générateurs et transforment l'énergie cinétique en énergie électrique.\nRéduit l'usure des plaquettes et des disques de frein.\n\n3. Freinage par récupération\nUne forme de freinage électrique. L’énergie produite est réinjectée dans la caténaire et peut être utilisée par d’autres trains. Cela réduit considérablement la consommation d’énergie.\n\n4. Freinage par résistance (freinage rhéostatique)\nSi l’énergie ne peut pas être réinjectée dans le réseau, elle est convertie en chaleur dans des résistances de freinage situées sur le toit."
+    }
+  },
+  "wheels": {
+    "title": {
+      "nl": "Wielen",
+      "fr": "Roues"
+    },
+    "details": {
+      "nl": "Een treinwiel is niet volledig cilindrisch, maar heeft een lichte conische vorm: de diameter is aan de binnenzijde iets groter dan aan de buitenzijde. Hierdoor kan een trein in een bocht rijden zonder stuurinrichting.\n\nWanneer de trein naar één kant van het spoor verschuift, rolt het wiel aan die zijde op een grotere diameter en aan de andere zijde op een kleinere diameter. Daardoor legt het ene wiel automatisch een langere weg af dan het andere, waardoor de wielas zich vanzelf door de bocht stuurt.\n\nAan de binnenzijde van het wiel bevindt zich bovendien de wielflens, een opstaande rand die voorkomt dat het wiel bij wissels of in scherpe bochten naast de spoorstaaf terechtkomt. De flens dient dus vooral als beveiliging, terwijl de conische wielvorm zorgt voor de natuurlijke geleiding van de trein.",
+      "fr": "Une roue de train n'est pas entièrement cylindrique, mais présente une forme légèrement conique : son diamètre est légèrement plus grand à l'intérieur qu'à l'extérieur. Cela permet à un train de prendre un virage sans système de direction.\n\nLorsque le train se déplace vers un côté de la voie, la roue roule sur un diamètre plus grand de ce côté-là et sur un diamètre plus petit de l’autre côté. Ainsi, l’une des roues parcourt automatiquement une distance plus longue que l’autre, ce qui permet à l’essieu de se diriger tout seul dans le virage.\n\nDe plus, à l’intérieur de la roue se trouve le boudin, un rebord surélevé qui empêche la roue de sortir du rail au niveau des aiguillages ou dans les virages serrés. Le boudin sert donc principalement de dispositif de sécurité, tandis que la forme conique de la roue assure le guidage naturel du train."
+    }
+  },
+  "passenger-doors": {
+    "title": {
+      "nl": "Reizigersdeuren",
+      "fr": "Portes des voyageurs"
+    },
+    "details": {
+      "nl": "Moderne reizigerstreinen kunnen verschillende soorten deuraandrijvingen hebben, maar tegenwoordig zijn de meeste deuren elektrisch aangestuurd.\n\nPneumatische deuren\nWorden geopend en gesloten met persluchtcilinders.\nVeel gebruikt op oudere rijtuigen en motorstellen.\nVoorbeelden: oudere M4- en M5-rijtuigen van de NMBS.\n\nElektrische deuren\nWorden aangedreven door elektrische motoren. Sturing gebeurt door een deurcomputer die de positie en obstakeldetectie bewaakt.Gebruikt op moderne treinen zoals de Desiro MS08 en M7-rijtuigen.\nNauwkeuriger, energiezuiniger en eenvoudiger te diagnosticeren.\n\nElektro-pneumatische deuren\nCombinatie van beide systemen. Elektrische besturing geeft het commando, terwijl perslucht de eigenlijke beweging uitvoert. Komt voor op  materieel uit de overgangsperiode tussen pneumatische en volledig elektrische systemen.",
+      "fr": "Les trains de voyageurs modernes peuvent être équipés de différents types de systèmes d'ouverture des portes, mais aujourd'hui, la plupart des portes sont à commande électrique.\n\nPortes pneumatiques\nElles s'ouvrent et se ferment à l'aide de vérins à air comprimé.\nLargement utilisées sur les anciennes voitures et les rames automotrices.\nExemples : anciennes voitures M4 et M5 de la SNCB.\n\nPortes électriques\nElles sont actionnées par des moteurs électriques. La commande est assurée par un ordinateur de porte qui surveille la position et détecte les obstacles. Utilisées sur les trains modernes tels que les voitures Desiro MS08 et M7.\nPlus précises, plus économes en énergie et plus faciles à diagnostiquer.\n\nPortes électropneumatiques\nCombinaison des deux systèmes. La commande électrique donne l'ordre, tandis que l'air comprimé effectue le mouvement proprement dit. On les trouve sur le matériel datant de la période de transition entre les systèmes pneumatiques et les systèmes entièrement électriques."
+    }
+  },
+  "roof-ventilation": {
+    "title": {
+      "nl": "Klimatisatie unit",
+      "fr": "Unité de climatisation"
+    },
+    "details": {
+      "nl": "Een moderne trein beschikt meestal over één of meerdere HVAC-units (Heating, Ventilation & Air Conditioning) die zorgen voor verwarming, ventilatie en koeling van de reizigersruimte en soms ook van de bestuurderscabine.\n\nHoe werkt een HVAC-unit?\n\nAanzuigen van lucht\nDe unit zuigt buitenlucht aan via roosters op het dak.Tegelijk wordt een deel van de lucht uit het rijtuig gerecirculeerd om energie te besparen.\n\nFilteren\nDe lucht passeert door filters die stof, pollen en andere verontreinigingen verwijderen.\n\nVerwarmen of koelen\n\nIn de winter wordt de lucht verwarmd door elektrische verwarmingselementen of warmtepompen.\nIn de zomer werkt de HVAC als een koelmachine volgens hetzelfde principe als een airco:\neen compressor perst een koudemiddel samen;\nhet koudemiddel geeft warmte af aan de buitenlucht;\nvervolgens verdampt het opnieuw en onttrekt warmte aan de binnenlucht;\nde aangezogen lucht wordt daardoor afgekoeld.\n\nVerdelen van de lucht\n\nVentilatoren blazen de behandelde lucht via luchtkanalen door het rijtuig.\nUitblaasroosters in plafond of zijwanden zorgen voor een gelijkmatige temperatuur.\n\nAutomatische regeling\n\nTemperatuursensoren meten continu de binnen- en buitentemperatuur.\nDe HVAC-computer past automatisch de verwarming, koeling en ventilatie aan om een comfortabele temperatuur te behouden, meestal rond 20 à 24 °C.",
+      "fr": "Un train moderne est généralement équipé d'une ou plusieurs unités CVC (chauffage, ventilation et climatisation) qui assurent le chauffage, la ventilation et la climatisation de l'espace passagers et, parfois, de la cabine de conduite.\n\nComment fonctionne une unité CVC ?\n\nAspiration de l'air\nL'unité aspire l'air extérieur par des grilles situées sur le toit. Parallèlement, une partie de l'air provenant de la voiture est recyclée afin d'économiser de l'énergie.\n\nFiltration\nL'air passe à travers des filtres qui éliminent la poussière, le pollen et d'autres impuretés.\n\nChauffage ou refroidissement\n\nEn hiver, l’air est chauffé par des résistances électriques ou des pompes à chaleur.\nEn été, le système CVC fonctionne comme un refroidisseur selon le même principe qu’un climatiseur :\nun compresseur comprime un fluide frigorigène ;\nle fluide frigorigène transfère de la chaleur à l’air extérieur ;\npuis il s'évapore à nouveau et extrait la chaleur de l'air intérieur ;\nl'air aspiré est ainsi refroidi.\n\nDistribution de l'air\n\nDes ventilateurs diffusent l'air traité dans la voiture par des conduits d'aération.\nDes bouches d'aération situées au plafond ou sur les parois latérales assurent une température homogène.\n\nRégulation automatique\n\nDes capteurs de température mesurent en continu la température intérieure et extérieure.\nL'ordinateur du système CVC ajuste automatiquement le chauffage, la climatisation et la ventilation afin de maintenir une température confortable, généralement comprise entre 20 et 24 °C."
+    }
+  },
+  "electronics": {
+    "title": {
+      "nl": "Elektronica",
+      "fr": "Électronique"
+    },
+    "details": {
+      "nl": "De elektronica in een moderne trein zorgt voor een veilige en betrouwbare werking van alle systemen aan boord. Ze stuurt de deuren aan en controleert of deze correct gesloten zijn voor vertrek. Elektronische systemen regelen de binnen- en buitenverlichting en bewaken hun goede werking.\nVia elektronica worden reizigers geïnformeerd met schermen, displays en automatische omroepberichten.\nDaarnaast ondersteunt ze tal van veiligheidsfuncties, zoals remsystemen, diagnoseapparatuur en treinbeveiligingssystemen. Zo helpt elektronica bij de comfortervaring en de veiligheid.",
+      "fr": "Les composants électroniques d'un train moderne garantissent un fonctionnement sûr et fiable de tous les systèmes à bord. Ils commandent les portes et vérifient qu'elles sont correctement fermées avant le départ. Les systèmes électroniques régulent l'éclairage intérieur et extérieur et surveillent leur bon fonctionnement.\nGrâce à l'électronique, les voyageurs sont informés par le biais d'écrans, d'affichages et d'annonces automatiques.\nDe plus, elle prend en charge de nombreuses fonctions de sécurité, telles que les systèmes de freinage, les équipements de diagnostic et les systèmes de sécurité ferroviaire. L'électronique contribue ainsi au confort et à la sécurité des voyageurs."
+    }
+  }
+}

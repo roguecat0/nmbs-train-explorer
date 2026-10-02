@@ -440,6 +440,10 @@ h1 {
 .repair-sheet details p {
   margin: 0.55rem 0 0;
 }
+.repair-sheet .repair-details-copy {
+  white-space: pre-line;
+  line-height: 1.5;
+}
 .close-button {
   position: absolute;
   top: 0.6rem;

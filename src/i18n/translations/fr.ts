@@ -1,5 +1,6 @@
 import type { RepairId } from "~/data/repairs";
 import type { Translations } from "~/i18n/types";
+import repairContent from "~/i18n/repair-content.generated.json";
 
 export const fr: Translations<RepairId> = {
   ui: {
@@ -12,7 +13,8 @@ export const fr: Translations<RepairId> = {
     progressLabel: (completed, total) =>
       `${completed} ${completed === 1 ? "réparation" : "réparations"} sur ${total} ${completed === 1 ? "terminée" : "terminées"}`,
     welcomeTitle: "Trouve les repères dans la gare",
-    welcomeDescription: "Scannez un code QR pour une réparation et découvrez plus d’informations sur la partie du train.",
+    welcomeDescription:
+      "Scannez un code QR pour une réparation et découvrez plus d’informations sur la partie du train.",
     tourLabel: "Parcours de réparation du train",
     tourIntro:
       "Suis le train de la cabine à la voiture. Scanne un repère dans la gare pour réparer la pièce correspondante.",
@@ -39,35 +41,46 @@ export const fr: Translations<RepairId> = {
     notFoundAction: "Retourner au sauvetage du train",
   },
   repairs: {
+    painting: {
+      title: repairContent.painting.title.fr,
+      summary: "Découvre comment sont appliquées les couleurs reconnaissables des trains SNCB.",
+      fact: repairContent.painting.details.fr,
+    },
     "drivers-cab": {
-      title: "Cabine de conduite",
+      title: repairContent["drivers-cab"].title.fr,
       summary: "Répare les commandes qui aident le conducteur à mener chaque trajet à bon port.",
-      fact: "La cabine est le centre de commande du train.",
+      fact: repairContent["drivers-cab"].details.fr,
     },
     headlights: {
-      title: "Phares",
+      title: repairContent.headlights.title.fr,
       summary: "Rallume les phares qui éclairent la voie devant le train.",
-      fact: "Des phares puissants permettent de bien voir le train.",
+      fact: repairContent.headlights.details.fr,
     },
     "brake-system": {
-      title: "Système de freinage",
+      title: repairContent["brake-system"].title.fr,
       summary: "Répare le système qui permet au train de s’arrêter en toute sécurité.",
-      fact: "Toutes les voitures agissent ensemble lorsque le train freine.",
+      fact: repairContent["brake-system"].details.fr,
     },
     wheels: {
-      title: "Roues",
+      title: repairContent.wheels.title.fr,
       summary: "Prépare les roues pour que le train roule sans à-coups sur les rails.",
-      fact: "Des roues en acier roulent sur des rails en acier.",
+      fact: repairContent.wheels.details.fr,
     },
     "passenger-doors": {
-      title: "Portes voyageurs",
+      title: repairContent["passenger-doors"].title.fr,
       summary: "Répare les portes pour que tout le monde puisse monter en sécurité.",
-      fact: "Les portes d’un train sont conçues pour fonctionner ensemble.",
+      fact: repairContent["passenger-doors"].details.fr,
     },
     "roof-ventilation": {
-      title: "Ventilation du toit",
+      title: repairContent["roof-ventilation"].title.fr,
       summary: "Fais à nouveau circuler l’air frais dans la voiture.",
-      fact: "Les équipements installés sur le toit d’un train cachent bien leur jeu.",
+      fact: repairContent["roof-ventilation"].details.fr,
+    },
+    electronics: {
+      title: repairContent.electronics.title.fr,
+      summary:
+        "Découvre comment l’électronique assure le fonctionnement fiable des systèmes à bord.",
+      fact: repairContent.electronics.details.fr,
     },
   },
 };

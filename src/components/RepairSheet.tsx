@@ -30,11 +30,17 @@ export default function RepairSheet(props: RepairSheetProps): JSX.Element {
         </button>
       </div>
       <h2>{copy().title}</h2>
-      <img class="repair-sheet-art" src={props.repair.image} alt="" width="512" height="341" />
+      <img
+        class="repair-sheet-art"
+        src={props.repair.image}
+        alt=""
+        width={props.repair.imageWidth}
+        height={props.repair.imageHeight}
+      />
       <p class="repair-summary">{props.completed ? i18n.ui().completedSummary : copy().summary}</p>
       <details>
         <summary>{i18n.ui().learnMore}</summary>
-        <p>{copy().fact}</p>
+        <p class="repair-details-copy">{copy().fact}</p>
       </details>
       <Show
         when={!props.completed}

@@ -18,6 +18,17 @@ The first UI draft is structured around:
   and screen composition;
 - `src/context/game-progress.tsx` for client-only progress state.
 
+Repair titles and expanded descriptions come from `translation_texts.xlsx`.
+After updating the workbook, regenerate the typed app content with:
+
+```bash
+python3 scripts/import-translations.py translation_texts.xlsx
+```
+
+The importer matches existing rows by `Titel oud`; new rows are mapped by
+`Route locatie` in `scripts/import-translations.py`. The workbook’s long
+“Meer ontdekken” copy appears when a repair’s details are expanded.
+
 ## Repair feedback
 
 Completing a repair closes its details automatically. Configure the replacement
@@ -60,10 +71,10 @@ pnpm ui:capture --url http://localhost:5173/ --feedback --height 568
 
 Use the actual app base URL, including a deployment base path when applicable.
 The default capture covers both languages at 320, 390, and 768 pixels wide,
-empty/partial/complete progress, all six repair sheets in pending/completed/expanded
+empty/partial/complete progress, all eight repair sheets in pending/completed/expanded
 states, and unknown URLs. Add `--height 568` to inspect short screens.
 Use `--feedback` to capture the state after clicking Repair at each completion
-count (1–6), including milestones configured without a popup. The manifest records
+count (1–8), including milestones configured without a popup. The manifest records
 whether a popup appeared and the resulting progress count.
 The helper does not start a server or modify your browser's progress.
 It reuses installed Chrome/Chromium or an existing Playwright browser cache;

@@ -42,8 +42,8 @@ export default function TrainTour(props: TrainTourProps): JSX.Element {
                   class="repair-art"
                   src={repair.image}
                   alt=""
-                  width="512"
-                  height="341"
+                  width={repair.imageWidth}
+                  height={repair.imageHeight}
                   loading={index() === 0 ? "eager" : "lazy"}
                 />
               </div>

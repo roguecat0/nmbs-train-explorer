@@ -6,12 +6,14 @@ import { parseArgs } from "node:util";
 import { chromium } from "playwright";
 
 const repairIds = [
+  "painting",
   "drivers-cab",
   "headlights",
   "brake-system",
   "wheels",
   "passenger-doors",
   "roof-ventilation",
+  "electronics",
 ];
 
 const { values } = parseArgs({

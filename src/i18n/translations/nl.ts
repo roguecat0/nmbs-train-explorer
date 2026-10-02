@@ -1,5 +1,6 @@
 import type { RepairId } from "~/data/repairs";
 import type { Translations } from "~/i18n/types";
+import repairContent from "~/i18n/repair-content.generated.json";
 
 export const nl: Translations<RepairId> = {
   ui: {
@@ -11,7 +12,8 @@ export const nl: Translations<RepairId> = {
     headerTitle: "Breng de trein weer tot leven",
     progressLabel: (completed, total) => `${completed} van ${total} reparaties voltooid`,
     welcomeTitle: "Vind de stationsmarkeringen",
-    welcomeDescription: "Scan een QR-code voor een reparatie en ontdek meer informatie over het treindeel.",
+    welcomeDescription:
+      "Scan een QR-code voor een reparatie en ontdek meer informatie over het treindeel.",
     tourLabel: "Reparatieronde van de trein",
     tourIntro:
       "Volg de trein van de cabine tot het rijtuig. Scan een stationsmarkering om het bijbehorende onderdeel te repareren.",
@@ -37,35 +39,45 @@ export const nl: Translations<RepairId> = {
     notFoundAction: "Terug naar de treinredding",
   },
   repairs: {
+    painting: {
+      title: repairContent.painting.title.nl,
+      summary: "Ontdek hoe de herkenbare kleuren van de NMBS-trein worden aangebracht.",
+      fact: repairContent.painting.details.nl,
+    },
     "drivers-cab": {
-      title: "Bestuurderscabine",
+      title: repairContent["drivers-cab"].title.nl,
       summary: "Herstel de bediening waarmee de treinbestuurder elke rit in goede banen leidt.",
-      fact: "De cabine is het commandocentrum van de trein.",
+      fact: repairContent["drivers-cab"].details.nl,
     },
     headlights: {
-      title: "Koplampen",
+      title: repairContent.headlights.title.nl,
       summary: "Laat de koplampen opnieuw schijnen op het spoor voor de trein.",
-      fact: "Felle lampen zorgen ervoor dat de trein goed zichtbaar is.",
+      fact: repairContent.headlights.details.nl,
     },
     "brake-system": {
-      title: "Remsysteem",
+      title: repairContent["brake-system"].title.nl,
       summary: "Herstel het systeem waarmee de trein veilig tot stilstand komt.",
-      fact: "Bij het remmen werken alle rijtuigen van een trein samen.",
+      fact: repairContent["brake-system"].details.nl,
     },
     wheels: {
-      title: "Wielen",
+      title: repairContent.wheels.title.nl,
       summary: "Maak de wielen klaar om de trein soepel over de rails te laten rijden.",
-      fact: "Stalen wielen rijden op stalen rails.",
+      fact: repairContent.wheels.details.nl,
     },
     "passenger-doors": {
-      title: "Reizigersdeuren",
+      title: repairContent["passenger-doors"].title.nl,
       summary: "Repareer de deuren zodat iedereen veilig kan instappen.",
-      fact: "De deuren van een trein zijn ontworpen om samen te werken.",
+      fact: repairContent["passenger-doors"].details.nl,
     },
     "roof-ventilation": {
-      title: "Dakventilatie",
+      title: repairContent["roof-ventilation"].title.nl,
       summary: "Laat opnieuw frisse lucht door het rijtuig stromen.",
-      fact: "De apparatuur op het dak van een trein doet meer dan je op het eerste gezicht ziet.",
+      fact: repairContent["roof-ventilation"].details.nl,
+    },
+    electronics: {
+      title: repairContent.electronics.title.nl,
+      summary: "Ontdek hoe elektronica de systemen aan boord veilig en betrouwbaar laat werken.",
+      fact: repairContent.electronics.details.nl,
     },
   },
 };
