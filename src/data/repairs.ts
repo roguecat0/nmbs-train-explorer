@@ -29,9 +29,9 @@ export const repairs: Repair[] = [
   {
     id: "painting",
     color: "sunshine",
-    image: paintingImage,
-    imageWidth: 728,
-    imageHeight: 624,
+    image: electronicsImage,
+    imageWidth: 700,
+    imageHeight: 658,
   },
   {
     id: "drivers-cab",
@@ -78,8 +78,8 @@ export const repairs: Repair[] = [
   {
     id: "electronics",
     color: "sky",
-    image: electronicsImage,
-    imageWidth: 700,
-    imageHeight: 658,
+    image: paintingImage,
+    imageWidth: 728,
+    imageHeight: 624,
   },
 ];
