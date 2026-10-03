@@ -1,8 +1,17 @@
 import type { RepairId } from "~/data/repairs";
-import { readStoredRepairIds, writeStoredRepairIds } from "~/lib/repair-storage";
+import {
+  clearStoredRepairIds,
+  readStoredRepairIds,
+  writeStoredRepairIds,
+} from "~/lib/repair-storage";
 
 const STARTED_STORAGE_KEY = "train-repair-started";
 const startedHere = new Set<RepairId>();
+
+export function clearReportedRepairStarts(): void {
+  startedHere.clear();
+  clearStoredRepairIds(STARTED_STORAGE_KEY);
+}
 
 export function reportRepairStarted(repairId: RepairId): void {
   if (startedHere.has(repairId)) return;

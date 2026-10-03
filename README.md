@@ -107,12 +107,12 @@ The first visit to each valid, incomplete repair route also emits a `POST` to
 `/events/repair-started/<repair-id>`, logged with `"type":"repair_started"`.
 The app loads saved progress before checking the route and keeps a separate
 `train-repair-started` list in local storage once the browser queues the beacon.
-Refreshes and rescans skip recorded starts; resetting game progress preserves
-this list. Home and unknown repair routes emit no start event. Clearing browser
-storage or using another browser allows new start events. When storage is
-unavailable, starts are deduplicated only within the current page. Beacons are
-best-effort analytics: queuing does not confirm delivery, and simultaneous first
-visits in separate tabs can still produce duplicate events.
+Refreshes and rescans skip recorded starts; the development-only reset control
+clears this list and allows start events to be recorded again. Home and unknown
+repair routes emit no start event. When storage is unavailable, starts are
+deduplicated only within the current page. Beacons are best-effort analytics:
+queuing does not confirm delivery, and simultaneous first visits in separate
+tabs can still produce duplicate events.
 
 Nginx sends each access log to both Render stdout and the in-container Grafana Alloy collector. Alloy parses the JSON and forwards it to Grafana Cloud Loki over HTTPS. In Render, configure these secret environment variables:
 

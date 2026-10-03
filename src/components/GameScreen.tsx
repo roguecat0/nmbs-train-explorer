@@ -69,9 +69,11 @@ export default function GameScreen(props: GameScreenProps): JSX.Element {
         activeRepairId={selectedRepair()?.id}
         onRepairSelect={(repair) => setSelectedRepair(repair)}
       />
-      <button class="reset-progress" type="button" onClick={resetProgress}>
-        {i18n.ui().resetProgress}
-      </button>
+      {import.meta.env.DEV && (
+        <button class="reset-progress" type="button" onClick={resetProgress}>
+          {i18n.ui().resetProgress}
+        </button>
+      )}
       <Show when={selectedRepair()}>
         {(repair) => (
           <RepairSheet

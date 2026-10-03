@@ -4,6 +4,7 @@ import {
   readStoredRepairIds,
   writeStoredRepairIds,
 } from "~/lib/repair-storage";
+import { clearReportedRepairStarts } from "~/lib/repair-events";
 
 const STORAGE_KEY = "train-repair-progress";
 
@@ -29,6 +30,7 @@ export function GameProgressProvider(props: ParentProps): JSX.Element {
   const reset = (): void => {
     setCompleted([]);
     clearStoredRepairIds(STORAGE_KEY);
+    clearReportedRepairStarts();
   };
 
   const progress: GameProgress = {
